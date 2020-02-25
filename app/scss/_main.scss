@@ -1,0 +1,76 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a:active,
+a:hover,  
+a {
+  text-decoration: none !important;
+  color: #fff;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    font-family: Museo Sans Cyrl;
+    color: $text-color;
+}
+
+h1,h2 {
+    text-transform: uppercase;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h3,p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.inner {
+    max-width: 1744px;
+    margin-left: auto;
+    margin-right: auto;
+    @include fronzymax(1810px) { 
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 1400px;
+    } 
+    @include fronzy(xs) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+p {
+    font-size: 18px;
+    color: $text-color;
+    margin-bottom: 20px;
+    line-height: 160%;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 160%;
+    color: #000;
+}

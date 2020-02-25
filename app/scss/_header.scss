@@ -1,0 +1,389 @@
+header {
+    background-image: url(../img/bg/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 960px;
+    margin-bottom: 97px;
+    @include fronzymax(1200px) {
+        min-height: 880px;
+    }
+    @include fronzy(xs) { 
+        background-image: none;
+        min-height: initial;
+        margin-bottom: 62px;
+    }
+}
+
+.header-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    
+    &__wrap {
+        display: flex;
+        padding-top: 34px;
+        padding-bottom: 34px;
+        align-items: center;
+        justify-content: space-between;
+        @include fronzy(xs) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    }
+    &__logo {
+        flex-grow: 1;
+        @include fronzy(xs) {
+            flex-grow: 0;
+        }
+        svg {
+            @include fronzymax(1000px) {
+                width: 102px;
+            }
+        }
+    }
+
+    &__mobile {
+        color: #fff;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: 42px;
+        font-size: 24px;
+        font-weight: bold;
+        &::before {
+            content: url(../img/icons/telephone.svg);
+            position: absolute;
+            left: -43px;
+            top: 0;
+        }
+        @include fronzymax(1000px) {
+            display: none;
+        }
+    }
+
+    &__social {
+        display: flex;
+        margin-right: 56px;
+        @include fronzymax(1000px) {
+            display: none;
+        }
+    }
+
+    .inst-icon {
+        margin-right: 28px;
+        @include fronzymax(1000px) {
+            display: none;
+        }
+    }
+
+    &__hamburger {
+        cursor: pointer;
+        position: relative;
+        height: 14px;
+        width: 50px;
+        @include fronzy(xs) {
+            width: 35px;
+            height: 13px;
+        }
+    }
+
+    .hamburger-line {
+        height: 2px;
+        width: 50px;
+        background-color: #fff;
+        transition: .3s;
+        position: absolute;
+        @include fronzy(xs) {
+            width: 100%;
+        }
+    }
+
+    .line-top {
+        top: 0%;
+        @include fronzy(xs) {
+            top: -1px;
+        }
+    }
+    .line-bottom {
+        bottom: 0;
+        @include fronzy(xs) {
+            bottom: 0;
+        }
+    }
+
+    
+}
+
+.hamburger-active {
+    .line-top {
+        top: 55%;
+        transform: rotate(-45deg);
+        
+    }
+
+    .line-bottom {
+        top: 55%;
+        transform: rotate(45deg);
+    }
+}
+
+.header-top-active {
+    background-color: #fff;
+    transition: 0.2s;
+
+    .header-top__mobile {
+        a {
+            color: $text-color;
+        }
+        
+    }
+
+    svg {
+        path {
+            fill: #000;
+        }
+    }
+
+    .hamburger-line {
+        background-color: $text-color;
+    }
+}
+
+.header-menu {
+    position: fixed;
+    top: 130px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(#fff, 0.9);
+    opacity: 0;
+    transition: 0.4s;
+    z-index: -1;
+    @include fronzy(xs) {
+        top: 82px;
+    }
+
+    &__mobile {
+        display: none;
+        @include fronzymax(1000px) {
+            display: block;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 21px;
+        }
+        a {
+            color: $text-color;
+            position: relative;
+            &::after {
+                content: url(../img/icons/telephone.svg);
+                position: absolute;
+                left: -43px;
+            }
+        }
+    }
+}
+
+.header-menu-active {
+    opacity: 1;
+    z-index: 4;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    transition: 0.2s;
+
+    &__list {
+        margin-top: 195px;
+        @include fronzymax(1200px) {
+            margin-top: 23px;
+            margin-bottom: 62px;
+        }
+    }
+    &__item {
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 37px;
+        font-weight: bold;
+        @include fronzymax(1000px) {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 24px;
+
+        }
+        a {
+            color: $text-color;
+        }
+    }
+
+    &__social {
+        display: none;
+        @include fronzymax(1000px) {
+            display: flex;
+            justify-content: center;
+    
+            .inst-icon {
+                margin-right: 28px;
+            }
+        }
+
+    }
+}
+
+.header-content {
+    padding-top: 197px;
+    padding-bottom: 130px;
+    @include fronzy(xs) {
+        padding-bottom: 0; 
+     }
+    @include fronzy(xs) { 
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+    }
+    &__title {
+        font-family: Bebas Neue;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: #fff;
+        @include fronzymax(1000px) {
+            font-size: 35px;
+        }
+        @include fronzy(xs) { 
+            font-size: 30px;
+        }
+    }
+
+    &__subtitle {
+        font-family: Museo Sans Cyrl;
+        font-weight: bold;
+        font-size: 50px;
+        color: #fff;
+        margin-bottom: 51px;
+        color: #fff;
+        @include fronzymax(1000px) {
+            font-size: 35px;
+        }
+        @include fronzy(xs) { 
+            font-size: 25px;
+        }
+        span {
+            color: $color-style;
+        }
+    }
+
+    &__title-wrap {
+        @include fronzy(xs) { 
+            background-image: url(../img/bg/header-bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 157px;
+            margin-left: -10px;
+            margin-right: -10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+    }
+
+    &__list {
+        color: #fff;
+        font-weight: bold;
+        line-height: 29px;
+        margin-bottom: 111px;
+        order: 3;
+        @include fronzy(md) {
+            margin-bottom: 60px;
+        }
+        @include fronzy(xs) {
+            margin-bottom: 0;
+        }
+    }
+
+    .list-item-wrap {
+        position: relative;
+        &::before {
+            position: absolute;
+            left: -73px;
+        }
+    }
+
+    .list-item {
+        display: flex;
+        align-items: center;
+        img {
+            display: inline-block;
+        }
+        span {
+            position: relative;
+            margin-left: 80px;
+            font-size: 24px;
+            @include fronzy(xs) { 
+                color: $text-color;
+                font-size: 14px;
+                margin-left: 40px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: -75px;
+                @include fronzy(xs) { 
+                    left: -33px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+
+    .list-item:nth-child(1) {
+        span {
+            font-size: 36px;
+            padding: 8px;
+            background-color: $color-style;
+            border-radius: 4px;
+            @include fronzy(xs) { 
+                font-size: 20px;
+                color: #fff;
+            }
+            &::before {
+                content: url(../img/icons/003-worldwide.png);
+                top: 25%;
+            }
+        }
+    }
+    .list-item:nth-child(2) {
+        span {
+            &::before {
+                content: url(../img/icons/001-european-union.png);
+            }
+        }
+    }
+    .list-item:nth-child(3) {
+        span {
+            &::before {
+                content: url(../img/icons/001-european-union.png);
+            }
+        }
+    }
+    .list-item:nth-child(4) {
+        span {
+            &::before {
+                content: url(../img/icons/002-russia.png);
+            }
+        }
+    }
+
+    &__button {
+        @include button;
+        order: 2;
+        @include fronzy(xs) {
+            margin-top: 13px;
+            margin-bottom: 25px;
+        }
+    }
+
+}

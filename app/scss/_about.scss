@@ -1,0 +1,272 @@
+.about {
+    margin-bottom: 165px;
+    position: relative;
+    @include fronzy(xs) {
+        margin-bottom: 115px;
+    }
+    h2 {
+        @include h2;
+    }
+
+    &__inner {
+        background-image: url(../img/images/left-border.png), url(../img/images/right-border.png);
+        background-position: left center, right center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: contain;
+        @include fronzymax(1000px) {
+            background-image: none;
+        }
+    }
+
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        @include fronzy(xs) {
+            flex-direction: column-reverse;
+        }
+
+    }
+
+    &__slider {
+        position: relative;
+    }
+
+    &__content {
+        max-width: 700px;
+        margin-left: 146px;
+        @include fronzymax(1810px) {
+            margin-left: 100px;
+            max-width: 500px;
+        }
+        @include fronzymax(1000px) {
+            margin-left: 0;
+            max-width: 50%;
+        }
+        @include fronzy(xs) {
+            max-width: 100%;
+        }
+    }
+
+    &__image {
+        margin-right: 146px;
+        @include fronzymax(1810px) {
+            margin-right: 100px;
+            max-width: 400px;
+        }
+        @include fronzymax(1000px) {
+            margin-right: 0;
+            max-width: 40%;
+        }
+        @include fronzy(xs) {
+            max-width: 128px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .about-slider-counter {
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        position: absolute;
+        left: 45%;
+        right: 45%;
+        bottom: -82px;
+        @include fronzy(xs) {
+            left: 38%;
+            right: 38%;
+        }
+    }
+
+    .about-slider-arrows {
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .about-slider-arrows-left {
+        cursor: pointer;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        bottom: -90px;
+        left: 40%;
+        &:hover {
+            div, div::before, div:after {
+                transition: .2s;
+                background-color: $color-style;  
+            }
+        }
+        @include fronzymax(1000px) {
+            left: 30%;
+        }
+        @include fronzy(xs) {
+            left: 22%;
+        }
+
+        div {
+            position: relative;
+            top: calc(50% - 5px);
+            height: 5px;
+            background-color: #888;
+            display: block;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 60%;
+                height: 5px;
+                background-color: #888;
+                transform: translate(-1px, 8px) rotate(45deg);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 60%;
+                height: 5px;
+                background-color: #888;
+                transform: translate(-1px, -8px) rotate(-45deg);
+            }
+        }
+    }
+
+    .about-slider-arrows-right {
+        cursor: pointer;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        bottom: -90px;
+        right: 40%;
+        &:hover {
+            div, div::before, div:after {
+                transition: .2s;
+                background-color: $color-style;  
+            }
+        }
+        @include fronzymax(1000px) {
+            right: 30%;
+        }
+        @include fronzy(xs) {
+            right: 22%;
+        }
+
+        div {
+            position: relative;
+            top: calc(50% - 5px);
+            height: 5px;
+            background-color: #888;
+            display: block;
+            border-radius: 1px;
+            
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 60%;
+                height: 5px;
+                background-color: #888;
+                transform: translate(15px, 9px) rotate(-45deg);
+                border-radius: 1px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 60%;
+                height: 5px;
+                background-color: #888;
+                transform: translate(15px, -9px) rotate(45deg);
+                border-radius: 1px;
+            }
+        }
+    }
+
+
+    .about-content {
+        &__name {
+            font-family: Bebas Neue;
+            font-size: 70px;
+            color: $color-style;
+            line-height: 70px;
+            padding-top: 40px;
+            @include fronzy(xs) {
+                font-size: 40px;
+                text-align: center;
+            }
+        }
+
+        &__subname {
+            font-family: Bebas Neue;
+            font-size: 40px;
+            line-height: 40px;
+            text-transform: uppercase;
+            color: #888888;
+            font-weight: bold;
+            margin-bottom: 17px;
+            @include fronzy(xs) {
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+
+        &__descr {
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: 0.155em;
+            text-transform: uppercase;
+            margin-bottom: 39px;
+            @include fronzy(xs) {
+                text-align: center;
+            }
+        }
+
+        &__button-hide {
+            display: none;
+            @include fronzy(xs) {
+                display: block;
+                padding: 12px 47px;
+                color: #888888;
+                border: 1px solid #888888;
+                border-radius: 3px;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 0.155em;
+                max-width: 156px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 24px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .about-list {
+        margin-bottom: 31px;
+        @include fronzy(xs) {
+            margin-bottom: 71px;
+        }
+        &__item {
+            font-size: 18px;
+            position: relative;
+            line-height: 160%;
+            padding-left: 40px;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                background-color: $color-style;
+                border-radius: 3px;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+
+    .about-list.active {
+        display: none;
+    }
+}
