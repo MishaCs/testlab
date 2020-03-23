@@ -44,8 +44,8 @@ $(function(){
     fade: true,
     cssEase: 'linear',
     slidesToShow: 1,
-    prevArrow: '<div class="about-slider-arrows about-slider-arrows-left"><div></div></div>',
-    nextArrow: '<div class="about-slider-arrows about-slider-arrows-right"><div></div></div>'
+    prevArrow: '<div class="about-slider-arrows about-slider-arrows-left"><img src="img/images/arrow.png" alt=""></div>',
+    nextArrow: '<div class="about-slider-arrows about-slider-arrows-right"><img src="img/images/arrow.png" alt=""></div>'
   });
 
 
